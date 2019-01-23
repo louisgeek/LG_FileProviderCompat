@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.louisgeek.FileProviderCompat">
+
+    <application>
+        <!-- FileProvider 是 ContentProvider 子类 内容提供器-->
+        <!--exported 必须是 false，grantUriPermissions 必须是 true-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths_file_provider" />
+        </provider>
+
+    </application>
+</manifest>
