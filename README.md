@@ -1,6 +1,6 @@
 # FileProviderCompat
 
-Android 7、8 FileProvider 兼容适配
+FileProviderCompat
 
 Step 1. Add the JitPack repository to your build file
 
