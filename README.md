@@ -22,6 +22,10 @@ Step 2. Add the dependency  [![](https://jitpack.io/v/louisgeek/FileProviderComp
 	}
 
 
+
+
+## 1 apk 安装
+
 ```
 installApk(this, "/storage/emulated/0/Download/mytest-6.apk");
 ```
