@@ -1,37 +1,35 @@
-package com.louisgeek.fileprovidercompatdemo;
+# FileProviderCompat
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.provider.Settings;
-import android.text.TextUtils;
-import android.util.Log;
+Android 7、8 FileProvider 兼容适配
 
-import com.louisgeek.FileProviderCompat.FileProviderCompat;
+Step 1. Add the JitPack repository to your build file
 
-import java.io.File;
+Add it in your root build.gradle at the end of repositories:
+```
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    private static final String APK_MIME_TYPE = "application/vnd.android.package-archive";
-    private static final int REQUEST_CODE_INSTALL_APK = 111;
-    private static final int REQUEST_CODE_ACTION_MANAGE_UNKNOWN_APP_SOURCES = 222;
+Step 2. Add the dependency  [![](https://jitpack.io/v/louisgeek/FileProviderCompat.svg)](https://jitpack.io/#louisgeek/FileProviderCompat)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //
-        installApk(this, "/storage/emulated/0/Download/mytest-6.apk");
-    }
+	dependencies {
+	        compile 'com.github.louisgeek:FileProviderCompat:x.x.x'
+	}
 
-    /**
+
+
+···
+installApk(this, "/storage/emulated/0/Download/mytest-6.apk");
+···
+
+···
+
+   /**
      * @param filePath not startWith  file://  or  content://
      *                 like  /storage/emulated/0/Download/mytest-6.apk
      */
@@ -96,4 +94,5 @@ public class MainActivity extends AppCompatActivity {
         fragmentActivity.startActivity(intent);
 //        fragmentActivity.startActivityForResult(intent, REQUEST_CODE_INSTALL_APK);
     }
-}
+	
+···

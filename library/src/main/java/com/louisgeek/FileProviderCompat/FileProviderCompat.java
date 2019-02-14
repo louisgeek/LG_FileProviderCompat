@@ -31,7 +31,7 @@ public class FileProviderCompat {
                                        Intent intent,
                                        File file) {
         if (Build.VERSION.SDK_INT >= 24) {
-            intent.setData(getUriFromFile(context, file));
+            intent.setData(FileProviderCompat.getUriFromFile(context, file));
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 //            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         } else {
@@ -44,7 +44,7 @@ public class FileProviderCompat {
                                               String type,
                                               File file) {
         if (Build.VERSION.SDK_INT >= 24) {
-            intent.setDataAndType(getUriFromFile(context, file), type);
+            intent.setDataAndType(FileProviderCompat.getUriFromFile(context, file), type);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 //            intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         } else {
