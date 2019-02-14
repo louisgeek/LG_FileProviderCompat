@@ -22,12 +22,11 @@ Step 2. Add the dependency  [![](https://jitpack.io/v/louisgeek/FileProviderComp
 	}
 
 
-
-···
+```
 installApk(this, "/storage/emulated/0/Download/mytest-6.apk");
-···
+```
 
-···
+```
 
    /**
      * @param filePath not startWith  file://  or  content://
@@ -95,4 +94,4 @@ installApk(this, "/storage/emulated/0/Download/mytest-6.apk");
 //        fragmentActivity.startActivityForResult(intent, REQUEST_CODE_INSTALL_APK);
     }
 	
-···
+```
