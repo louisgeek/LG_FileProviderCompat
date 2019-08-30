@@ -3,7 +3,11 @@
 
     <application>
         <!-- FileProvider 是 ContentProvider 子类 内容提供器-->
-        <!--exported 必须是 false，grantUriPermissions 必须是 true-->
+        <!--exported 必须是 false，grantUriPermissions 必须是 true
+        authorities 保证唯一即可
+        name  根据情况采用 androidx.core.content.FileProvider
+        或者 android.support.v4.content.FileProvider
+        -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.FileProvider"
@@ -11,7 +15,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/paths_file_provider" />
+                android:resource="@xml/file_paths_provider" />
         </provider>
 
     </application>
